@@ -6,7 +6,7 @@ import (
 	"github.com/gin-gonic/gin"
 )
 
-func main() {
+func changeItToMainLater() {
 	router := gin.Default()
 
 	router.GET("/albums", getAlbums)
@@ -29,7 +29,6 @@ var albums = []album{
 	{ID: "103", Title: "Lego night", Artist: "john piece", Price: 63.45},
 }
 
-
 // get Albums - get a list of all albums
 /*
 curl http://localhost:8080/albums
@@ -38,14 +37,13 @@ func getAlbums(c *gin.Context) {
 	c.IndentedJSON(http.StatusOK, albums)
 }
 
-
 // post Albums - add another album
 func postAlbums(c *gin.Context) {
-/*
-curl http://localhost:8080/albums \
---header "Content-type: application/json" \
---data '{"id":{}, "title":{}, "artist":{}, "price":{}}'
-*/
+	/*
+	   curl http://localhost:8080/albums \
+	   --header "Content-type: application/json" \
+	   --data '{"id":{}, "title":{}, "artist":{}, "price":{}}'
+	*/
 
 	var newAlbum album
 
@@ -59,7 +57,6 @@ curl http://localhost:8080/albums \
 
 	c.IndentedJSON(http.StatusCreated, newAlbum)
 }
-
 
 // get Albums{id} - getting the album with the id specified
 /*
@@ -77,7 +74,7 @@ func getAlbumsByID(c *gin.Context) {
 	}
 	c.IndentedJSON(http.StatusNotFound, gin.H{
 		"message": " Album ID does not exist",
-		"ID": id,
+		"ID":      id,
 	})
 
 }
