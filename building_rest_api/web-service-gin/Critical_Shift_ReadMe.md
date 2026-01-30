@@ -132,12 +132,6 @@ Each device check-in contains:
 
 ---
 
-Nice idea — interviewers *love* this section. Here’s a **clean, realistic “Things to Do in the Future”** section you can drop straight into the README. It sounds thoughtful without overengineering.
-
-You can paste this at the bottom of your README.
-
----
-
 ## Things to Do in the Future
 
 * **Device Online / Offline Tracking**
