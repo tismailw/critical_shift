@@ -19,10 +19,10 @@ func main() {
 
 // iot devices would probably have fields like, deviceID,
 type DeviceCheckIn struct {
-	DeviceID     string `json:"device_id"`
-	TenantID     string `json:"tenant_id"` // An ID that references the user, x data belongs to tenent_id (compnay x)
+	DeviceID string `json:"device_id"`
+	TenantID string `json:"tenant_id"` // An ID that references the user, x data belongs to tenent_id (compnay x)
 	//SerialNumber string `json:"serial_number"`
-	Firmware     string `json:"firmware"`
+	Firmware string `json:"firmware"`
 
 	BOM map[string]any `json:"bom"` //bill of materials
 
@@ -126,7 +126,7 @@ func getDevicesByDevice_id(c *gin.Context) {
 	}
 	c.IndentedJSON(http.StatusNotFound, gin.H{
 		"message": " Device ID does not exist",
-		"ID":      id,
+		"ID": id,
 	})
 
 }
@@ -146,7 +146,7 @@ curl http://localhost:8080/d/t/{id}
 	if len(results) == 0 {
 		c.IndentedJSON(http.StatusNotFound, gin.H{
 			"message": " Device ID does not exist",
-			"ID":      id,
+			"ID": id,
 		})
 		return
 
