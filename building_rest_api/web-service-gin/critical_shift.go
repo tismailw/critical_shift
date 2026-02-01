@@ -24,6 +24,8 @@ type DeviceCheckIn struct {
 	//SerialNumber string `json:"serial_number"`
 	Firmware string `json:"firmware"`
 
+	Online bool	`json:"is_online"`
+
 	BOM map[string]any `json:"bom"` //bill of materials
 
 	Timestamp string `json:"timestamp"`
@@ -35,6 +37,7 @@ var devices = []DeviceCheckIn{
 		DeviceID: "dev-001",
 		TenantID: "tenant-alpha",
 		Firmware: "v1.0.3",
+		Online: true,
 		BOM: map[string]any{
 			"cpu":     "ARM Cortex-A53",
 			"ram_mb":  1024,
@@ -47,6 +50,7 @@ var devices = []DeviceCheckIn{
 		DeviceID: "dev-002",
 		TenantID: "tenant-alpha",
 		Firmware: "v1.1.0",
+		Online: true,
 		BOM: map[string]any{
 			"cpu":     "ARM Cortex-A72",
 			"ram_mb":  2048,
@@ -59,6 +63,7 @@ var devices = []DeviceCheckIn{
 		DeviceID: "dev-101",
 		TenantID: "tenant-bravo",
 		Firmware: "v0.9.8",
+		Online: false,
 		BOM: map[string]any{
 			"cpu":     "ARM Cortex-M7",
 			"ram_mb":  512,
